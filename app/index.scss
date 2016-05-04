@@ -1,0 +1,16 @@
+/** Libraries */
+@import "../node_modules/normalize.css/normalize.css";
+
+/** Variables */
+$primary-color: cornsilk;
+
+/** Mixins */
+
+/** Globals */
+
+body {
+  background: $primary-color;
+  display: flex;
+}
+
+/** Components */
