@@ -25,6 +25,10 @@ const PATHS = {
   style: path.join(__dirname, 'app/index.scss')
 };
 
+// Set BABEL_ENV environment variable as npm lifecycle event. This gives
+// us a predictable mapping between package.json and .babelrc.
+process.env.BABEL_ENV = TARGET;
+
 const common = {
   // Entry accepts a path or an object of entries. We'll be using the
   // latter form given it's convenient with more complex configurations.
@@ -58,7 +62,7 @@ const common = {
         // Enable caching for improved performance during development
         // It uses default OS directory by default. If you need something
         // more custom, pass a path to it. I.e., babel?cacheDirectory=<path>
-        loaders: ['ng-annotate', 'babel?cacheDirectory,presets[]=react,presets[]=es2015'],
+        loaders: ['babel?cacheDirectory,presets[]=react,presets[]=es2015'],
         // Parse only app files! Without this it will go through entire project.
         // In addition to being slow, that will most likely result in an error.
         include: PATHS.app

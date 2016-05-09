@@ -1,4 +1,6 @@
 .DS_Store
-node_modules
-build
+.git
+.eslintcache
+node_modules/
+build/
 stats.json
