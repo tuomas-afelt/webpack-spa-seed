@@ -47,7 +47,7 @@ const common = {
     preLoaders: [
       {
         test: /\.jsx?$/,
-        loaders: ['jshint'],
+        loaders: ['eslint'],
         // define an include so we check just the files we need
         include: PATHS.app
       }
@@ -58,7 +58,7 @@ const common = {
         // Enable caching for improved performance during development
         // It uses default OS directory by default. If you need something
         // more custom, pass a path to it. I.e., babel?cacheDirectory=<path>
-        loaders: ['ng-annotate', 'babel?cacheDirectory,presets[]=es2015'],
+        loaders: ['ng-annotate', 'babel?cacheDirectory,presets[]=react,presets[]=es2015'],
         // Parse only app files! Without this it will go through entire project.
         // In addition to being slow, that will most likely result in an error.
         include: PATHS.app
